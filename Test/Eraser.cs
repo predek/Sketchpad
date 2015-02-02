@@ -57,6 +57,7 @@ namespace Sketchpad
         private void eraseNeighbourhood(Point p)
         {
             sketchManager.eraseNeighbourhood(p);
+            sketchManager.updateLabels();
         }
 
         public void closeTool()

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
@@ -50,6 +51,7 @@ namespace Sketchpad
                 freeSegments = value.freeSegments;
                 nodes = value.nodes;
                 edges = value.edges;
+                updateLabels();
             }
         }
 
@@ -61,13 +63,13 @@ namespace Sketchpad
         public void pushNode(Node node)
         {
             nodes.Add(node);
-            evaluationManager.updateLabels();
+            updateLabels();
         }
 
         public void pushEdge(Edge edge)
         {
             edges.Add(edge);
-            evaluationManager.updateLabels();
+            updateLabels();
         }
 
         public void eraseNeighbourhood(Point p)
@@ -199,6 +201,39 @@ namespace Sketchpad
             //System.Diagnostics.Debug.WriteLine(edges[0].targetNode.Equals(node));
             //System.Diagnostics.Debug.WriteLine(edges[0].targetNode.bounds.Equals(node.bounds));
             //System.Diagnostics.Debug.WriteLine("result.Count" + result.Count);
+        }
+
+        public void updateLabels()
+        {
+            System.Diagnostics.Debug.WriteLine("SketchManager.update");
+
+            window.labelsRectangle1.Children.Clear();
+
+            foreach (Node node in nodes)
+                drawTextBlock(node.value, node.bounds.TopLeft, node.bounds);
+
+            foreach (Edge edge in edges)
+                drawTextBlock(edge.value, middlePoint(edge.line), new Rect(edge.line.p1, edge.line.p2));
+        }
+
+        public void drawTextBlock(String text, Point position, Rect bounds)
+        {
+            int margin = 5;
+            position.Offset(margin, margin);
+
+            TextBlock textBlock = new TextBlock();
+            textBlock.TextWrapping = TextWrapping.Wrap;
+            textBlock.Text = text;
+            String color = "#000000";
+            textBlock.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom(color));
+
+            Canvas.SetLeft(textBlock, position.X);
+            Canvas.SetTop(textBlock, position.Y);
+
+            textBlock.MaxWidth = bounds.Width - 2 * margin;
+            textBlock.MaxHeight = bounds.Height - 2 * margin;
+
+            window.labelsRectangle1.Children.Add(textBlock);
         }
 
         //misc

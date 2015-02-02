@@ -21,7 +21,7 @@ namespace Sketchpad
         {
             Selection selection;
             List<Node> nodes = sketchManager.getNodesUnder(p);
-            System.Diagnostics.Debug.WriteLine("nodes.Count" + nodes.Count);
+            //System.Diagnostics.Debug.WriteLine("nodes.Count" + nodes.Count);
             if (nodes.Count == 1)
             {
                 selection = new Selection(nodes.ElementAt(0));
@@ -30,7 +30,7 @@ namespace Sketchpad
             else
             {
                 List<Edge> edges = sketchManager.getEdgesUnder(p);
-                System.Diagnostics.Debug.WriteLine("edges.Count" + edges.Count);
+                //System.Diagnostics.Debug.WriteLine("edges.Count" + edges.Count);
                 if (edges.Count == 1)
                 {
                     selection = new Selection(edges.ElementAt(0));

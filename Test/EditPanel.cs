@@ -71,7 +71,7 @@ namespace Sketchpad
                         selection.value = changedText;
                     }
 
-                    evaluationManager.updateLabels();
+                    sketchManager.updateLabels();
 
                     window.expressionTextBox.Text = selection.expression;
                     window.valueLabel.Content = selection.value;
@@ -80,7 +80,7 @@ namespace Sketchpad
                 {
                     selection.value = changedText;
                     selection.expression = changedText;
-                    evaluationManager.updateLabels();
+                    sketchManager.updateLabels();
                 }
             }
         }

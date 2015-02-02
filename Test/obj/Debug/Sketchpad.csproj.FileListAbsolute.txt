@@ -1,10 +1,3 @@
-C:\Users\username\Desktop\Sketchpad\Test\bin\Debug\Test.exe.config
-C:\Users\username\Desktop\Sketchpad\Test\obj\Debug\Test.exe
-C:\Users\username\Desktop\Sketchpad\Test\obj\Debug\Test.pdb
-C:\Users\username\Desktop\Sketchpad\Test\bin\Debug\Test.exe
-C:\Users\username\Desktop\Sketchpad\Test\bin\Debug\Test.pdb
-C:\Users\username\Desktop\Sketchpad\Test\bin\Debug\NCalc.dll
-C:\Users\username\Desktop\Sketchpad\Test\obj\Debug\Sketchpad.csprojResolveAssemblyReference.cache
 C:\Users\username\Desktop\Sketchpad\Test\obj\Debug\MainWindow.baml
 C:\Users\username\Desktop\Sketchpad\Test\obj\Debug\MainWindow.g.cs
 C:\Users\username\Desktop\Sketchpad\Test\obj\Debug\App.g.cs
@@ -12,3 +5,9 @@ C:\Users\username\Desktop\Sketchpad\Test\obj\Debug\Test_MarkupCompile.cache
 C:\Users\username\Desktop\Sketchpad\Test\obj\Debug\Test.g.resources
 C:\Users\username\Desktop\Sketchpad\Test\obj\Debug\Sketchpad.Properties.Resources.resources
 C:\Users\username\Desktop\Sketchpad\Test\obj\Debug\Sketchpad.csproj.GenerateResource.Cache
+C:\Users\username\Desktop\Sketchpad\Test\bin\Debug\Test.exe.config
+C:\Users\username\Desktop\Sketchpad\Test\bin\Debug\Test.exe
+C:\Users\username\Desktop\Sketchpad\Test\bin\Debug\Test.pdb
+C:\Users\username\Desktop\Sketchpad\Test\bin\Debug\NCalc.dll
+C:\Users\username\Desktop\Sketchpad\Test\obj\Debug\Test.exe
+C:\Users\username\Desktop\Sketchpad\Test\obj\Debug\Test.pdb
