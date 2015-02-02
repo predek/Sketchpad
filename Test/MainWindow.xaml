@@ -1,0 +1,33 @@
+﻿<Window x:Class="Sketchpad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="" Height="600" Width="800" Initialized="Window_Initialized">
+    <Grid>
+        <DockPanel Margin="0,0,-0.4,0.4">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="File">
+                    <MenuItem Header="New" Click="New_Click"/>
+                    <MenuItem Header="Open" Click="Open_Click"/>
+                    <MenuItem Header="Save" Click="Save_Click"/>
+                </MenuItem>
+            </Menu>
+            <StackPanel/>
+        </DockPanel>
+        <Canvas Name="rectangle1" Background="#F2F2F2" HorizontalAlignment="Left" Height="512" VerticalAlignment="Top" Width="531" Margin="49,29,0,0" MouseDown="rectangle1_MouseDown" MouseLeave="rectangle1_MouseLeave" MouseMove="rectangle1_MouseMove" MouseUp="rectangle1_MouseUp"/>
+        <Canvas Name="labelsRectangle1" HorizontalAlignment="Left" Height="512" VerticalAlignment="Top" Width="531" Margin="49,29,0,0" MouseDown="rectangle1_MouseDown" MouseLeave="rectangle1_MouseLeave" MouseMove="rectangle1_MouseMove" MouseUp="rectangle1_MouseUp"/>
+        <Label Name="label1" Content="" HorizontalAlignment="Left" Margin="10,541,-10.4,0" VerticalAlignment="Top" RenderTransformOrigin="-5.512,-4.298" Width="794" FontSize="10"/>
+        <Button Name="SelectButton" Width="30" Height="30" Margin="10,29,753.6,511.4" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="Select Tool" Click="SelectButton_Click">
+            <Image Source="Resources/select.png" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Button>
+        <Button Name="PencilButton" Width="30" Height="30" Margin="10,64,753.6,476.4" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="Pencil" Click="PencilButton_Click">
+            <Image Source="Resources/pencil.png" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Button>
+        <Button Name="EraserButton" Width="30" Height="30" Margin="10,100,753.6,440.4" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="Eraser" Click="EraserButton_Click">
+            <Image Source="Resources/eraser.png" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Button>
+        <Canvas x:Name="rectangle2" Background="#F2F2F2" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="175" Margin="594,29,-0.4,0" MouseDown="rectangle1_MouseDown" MouseLeave="rectangle1_MouseLeave" MouseMove="rectangle1_MouseMove" MouseUp="rectangle1_MouseUp">
+            <Label x:Name="valueLabel" Content="" HorizontalAlignment="Right" Width="155" Canvas.Left="10" Canvas.Top="10" Height="50"/>
+            <TextBox x:Name="expressionTextBox" Height="125" TextWrapping="Wrap" Width="155" Canvas.Left="10" Canvas.Top="65" TextChanged="expressionTextBox_TextChanged"/>
+        </Canvas>
+    </Grid>
+</Window>
