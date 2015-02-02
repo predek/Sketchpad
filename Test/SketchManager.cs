@@ -61,13 +61,13 @@ namespace Sketchpad
         public void pushNode(Node node)
         {
             nodes.Add(node);
-            evaluationManager.update();
+            evaluationManager.updateLabels();
         }
 
         public void pushEdge(Edge edge)
         {
             edges.Add(edge);
-            evaluationManager.update();
+            evaluationManager.updateLabels();
         }
 
         public void eraseNeighbourhood(Point p)
@@ -191,7 +191,14 @@ namespace Sketchpad
 
         public List<Edge> getFeedingEdges(Node node)
         {
-            return edges.FindAll(e => e.targetNode.Equals(node));
+            List<Edge> result = edges.FindAll(e => e.targetNode.bounds.Equals(node.bounds));
+            return result;
+            //System.Diagnostics.Debug.WriteLine("getFeedingEdges");
+            //System.Diagnostics.Debug.WriteLine(edges.Count);
+            //System.Diagnostics.Debug.WriteLine(edges[0].originNode);
+            //System.Diagnostics.Debug.WriteLine(edges[0].targetNode.Equals(node));
+            //System.Diagnostics.Debug.WriteLine(edges[0].targetNode.bounds.Equals(node.bounds));
+            //System.Diagnostics.Debug.WriteLine("result.Count" + result.Count);
         }
 
         //misc

@@ -12,8 +12,6 @@ namespace Sketchpad
         public Edge edge;
 
         private bool isNode;
-        //private string expression = "";
-        //private string value = "";
 	
         public Selection(Node node)
         {

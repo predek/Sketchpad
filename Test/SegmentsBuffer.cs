@@ -159,12 +159,6 @@ namespace Sketchpad
                 if (p1nearestNode != null)
                     d2 = distanceToRect(straightLine.p2, p2nearestNode.bounds);
 
-                //System.Diagnostics.Debug.WriteLine("//");
-                //System.Diagnostics.Debug.WriteLine("p1nearestNode = " + p1nearestNode);
-                //System.Diagnostics.Debug.WriteLine("p2nearestNode = " + p2nearestNode);
-                //System.Diagnostics.Debug.WriteLine("d1 = " + d1);
-                //System.Diagnostics.Debug.WriteLine("d2 = " + d2);
-
                 bool isEdge = d1 > 0 && d1 < 30 && d2 > 0 && d2 < 30; //line connects p1nearestNode and p2nearestNode == is edge                    
                 if ((p1nearestNode != null) && (p2nearestNode != null) && isEdge)
                 {

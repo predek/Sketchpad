@@ -60,8 +60,6 @@ namespace Sketchpad
                                 expressionParameterName = edge.value.ToString();     //variable name
                                 expressionParameterValue = edge.originNode.value.ToString();     //variable value
                                 parametersDictionary.Add(expressionParameterName, expressionParameterValue);
-
-                                //SketchpadApp.Instance.Diagnostics.Write(expressionParameterName + " = " + expressionParameterValue);
                             }
                         }
 
@@ -73,8 +71,7 @@ namespace Sketchpad
                         selection.value = changedText;
                     }
 
-                    evaluationManager.update();
-                    //SketchpadApp.Instance.LabelsManager.updateLabel(selectedNode);
+                    evaluationManager.updateLabels();
 
                     window.expressionTextBox.Text = selection.expression;
                     window.valueLabel.Content = selection.value;
@@ -83,8 +80,7 @@ namespace Sketchpad
                 {
                     selection.value = changedText;
                     selection.expression = changedText;
-                    evaluationManager.update();
-                    //SketchpadApp.Instance.LabelsManager.updateLabel(selectedEdge);
+                    evaluationManager.updateLabels();
                 }
             }
         }
