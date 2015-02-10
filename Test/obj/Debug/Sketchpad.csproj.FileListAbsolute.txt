@@ -11,3 +11,4 @@ C:\Users\username\Desktop\Sketchpad\Test\bin\Debug\Test.pdb
 C:\Users\username\Desktop\Sketchpad\Test\bin\Debug\NCalc.dll
 C:\Users\username\Desktop\Sketchpad\Test\obj\Debug\Test.exe
 C:\Users\username\Desktop\Sketchpad\Test\obj\Debug\Test.pdb
+C:\Users\username\Desktop\Sketchpad\Test\obj\Debug\Sketchpad.csprojResolveAssemblyReference.cache

@@ -29,6 +29,7 @@ namespace Sketchpad
             try
             {
                 NCalc.Expression expression = new Expression(expressionString);
+                expression.Options = EvaluateOptions.NoCache;
 
                 if (parametersDictionary.Count > 0)
                 {

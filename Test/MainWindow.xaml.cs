@@ -19,6 +19,7 @@ namespace Sketchpad
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
     public partial class MainWindow : Window
     {
         SketchManager sketchManager;
@@ -37,6 +38,7 @@ namespace Sketchpad
             sketchManager = new SketchManager(this, evaluationManager);
             editPanel = new EditPanel(this, sketchManager, evaluationManager);
             toolsManager = new ToolsManager(sketchManager, editPanel);
+            makeButtonPressed(PencilButton);
 
             rectangle2.Visibility = Visibility.Hidden;
         }

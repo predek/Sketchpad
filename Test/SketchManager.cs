@@ -31,8 +31,10 @@ namespace Sketchpad
 
         public SegmentsBuffer SegmentsBuffer
         {
-            get { return segmentsBuffer; }
-            //set { segmentsBuffer = value; }
+            get
+            {
+                return segmentsBuffer;
+            }
         }
 
         public Document Document
@@ -51,8 +53,21 @@ namespace Sketchpad
                 freeSegments = value.freeSegments;
                 nodes = value.nodes;
                 edges = value.edges;
+                fixNodesReferencesInEdges();
                 updateLabels();
             }
+        }
+
+        private void fixNodesReferencesInEdges()
+        {
+            foreach(Edge edge in edges)
+                foreach (Node node in nodes)
+                {
+                    if (edge.originNode.bounds.Equals(node.bounds))
+                        edge.originNode = node;
+                    if (edge.targetNode.bounds.Equals(node.bounds))
+                        edge.targetNode = node;
+                }
         }
 
         public void pushFreeSegments(List<Segment> segments)
@@ -143,13 +158,13 @@ namespace Sketchpad
             redraw();
         }
 
-        private void redraw()
+        private void redraw(Selection selection = null)
         {
             window.rectangle1.Children.Clear();
 
             string sketchColor = "#0557CE";
             string shapeColor = "#000000";
-            //string selectionColor = "#FF0000";//todo
+            string stressColor = "#FF0000";
 
             foreach (Node node in nodes)
                 foreach (Segment segment in node.segments)
@@ -164,9 +179,23 @@ namespace Sketchpad
 
             foreach (Segment segment in segmentsBuffer.segments)
                 drawLine(segment, sketchColor);
+            
+            if (selection != null)
+            {
+                if(selection.IsNode)
+                {
+                    foreach (Segment segment in selection.node.segments)
+                        drawLine(segment, stressColor, 1);
+                }
+                else
+                {
+                    foreach (Segment segment in selection.edge.segments)
+                        drawLine(segment, stressColor, 1);
+                }
+            }
         }
 
-        private void drawLine(Segment segment, string color)
+        private void drawLine(Segment segment, string color, double strokeThickness = 0.5)
         {
             Line line = new Line();
             line.Stroke = (SolidColorBrush)(new BrushConverter().ConvertFrom(color));
@@ -177,7 +206,7 @@ namespace Sketchpad
 
             line.HorizontalAlignment = HorizontalAlignment.Left;
             line.VerticalAlignment = VerticalAlignment.Center;
-            line.StrokeThickness = 0.5;
+            line.StrokeThickness = strokeThickness;
             window.rectangle1.Children.Add(line);
         }
 
@@ -193,35 +222,27 @@ namespace Sketchpad
 
         public List<Edge> getFeedingEdges(Node node)
         {
-            List<Edge> result = edges.FindAll(e => e.targetNode.bounds.Equals(node.bounds));
-            return result;
-            //System.Diagnostics.Debug.WriteLine("getFeedingEdges");
-            //System.Diagnostics.Debug.WriteLine(edges.Count);
-            //System.Diagnostics.Debug.WriteLine(edges[0].originNode);
-            //System.Diagnostics.Debug.WriteLine(edges[0].targetNode.Equals(node));
-            //System.Diagnostics.Debug.WriteLine(edges[0].targetNode.bounds.Equals(node.bounds));
-            //System.Diagnostics.Debug.WriteLine("result.Count" + result.Count);
+            return edges.FindAll(e => e.targetNode.bounds.Equals(node.bounds));
         }
 
         public void updateLabels()
         {
-            System.Diagnostics.Debug.WriteLine("SketchManager.update");
-
             window.labelsRectangle1.Children.Clear();
 
             foreach (Node node in nodes)
-                drawTextBlock(node.value, node.bounds.TopLeft, node.bounds);
+                drawTextBlock(node.value, node.expression, node.bounds.TopLeft, node.bounds);
 
             foreach (Edge edge in edges)
-                drawTextBlock(edge.value, middlePoint(edge.line), new Rect(edge.line.p1, edge.line.p2));
+                drawTextBlock(edge.value, edge.expression, middlePoint(edge.line), new Rect(edge.line.p1, edge.line.p2));
         }
 
-        public void drawTextBlock(String text, Point position, Rect bounds)
+        public void drawTextBlock(String text, String toolTipText, Point position, Rect bounds)
         {
             int margin = 5;
             position.Offset(margin, margin);
 
             TextBlock textBlock = new TextBlock();
+            textBlock.ToolTip = toolTipText;
             textBlock.TextWrapping = TextWrapping.Wrap;
             textBlock.Text = text;
             String color = "#000000";
@@ -230,10 +251,20 @@ namespace Sketchpad
             Canvas.SetLeft(textBlock, position.X);
             Canvas.SetTop(textBlock, position.Y);
 
-            textBlock.MaxWidth = bounds.Width - 2 * margin;
-            textBlock.MaxHeight = bounds.Height - 2 * margin;
+            textBlock.MaxWidth = Math.Round(bounds.Width - 2 * margin);
+            textBlock.MaxHeight = Math.Round(bounds.Height - 2 * margin);
 
             window.labelsRectangle1.Children.Add(textBlock);
+        }
+
+        public void stress(Selection selection)
+        {
+            redraw(selection);        
+        }
+
+        public void unstress()
+        {
+            redraw();
         }
 
         //misc

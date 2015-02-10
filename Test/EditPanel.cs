@@ -12,7 +12,6 @@ namespace Sketchpad
         private MainWindow window;
         private SketchManager sketchManager;
         private EvaluationManager evaluationManager;
-
         private Selection selection;
 
         public EditPanel(MainWindow window, SketchManager sketchManager, EvaluationManager evaluationManager)
@@ -44,10 +43,10 @@ namespace Sketchpad
             {
                 if(selection.IsNode)
                 {
-                    if (changedText.StartsWith("="))
-                    {
-                        selection.expression = changedText;
+                    selection.expression = changedText;
 
+                    if (selection.expression.StartsWith("="))
+                    {
                         Dictionary<String, String> parametersDictionary = new Dictionary<string, string>();
                         List<Edge> feedingEdges = sketchManager.getFeedingEdges(selection.node);
                         foreach (Edge edge in feedingEdges)
@@ -59,6 +58,7 @@ namespace Sketchpad
 
                                 expressionParameterName = edge.value.ToString();     //variable name
                                 expressionParameterValue = edge.originNode.value.ToString();     //variable value
+
                                 parametersDictionary.Add(expressionParameterName, expressionParameterValue);
                             }
                         }
@@ -67,7 +67,6 @@ namespace Sketchpad
                     }
                     else
                     {
-                        selection.expression = changedText;
                         selection.value = changedText;
                     }
 

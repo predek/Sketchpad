@@ -39,20 +39,14 @@ namespace Sketchpad
             {
                 Edge edge = detectEdge(segments);
                 if (edge != null)
-                {
                     sketchManager.pushEdge(edge);
-                }
                 else
-                {
                     sketchManager.pushFreeSegments(segments);
-                }
             }
 
             segments.Clear();
             sketchManager.update();
         }
-
-        //private
 
         private Node detectNode(List<Segment> segments)
         {
@@ -162,14 +156,6 @@ namespace Sketchpad
                 bool isEdge = d1 > 0 && d1 < 30 && d2 > 0 && d2 < 30; //line connects p1nearestNode and p2nearestNode == is edge                    
                 if ((p1nearestNode != null) && (p2nearestNode != null) && isEdge)
                 {
-                    //double p1p2angle = calculateAngle(segments.First().p1, segments.Last().p2);
-                    //System.Diagnostics.Debug.WriteLine("p1p2angle = " + p1p2angle);
-
-                    //bool isLine = !freshSegments.Any(s => angleDifference(sumAngle, calculateAngle(s.p1, s.p2)) > 45);
-                    //bool isStraight = !segments.Any(s => angleDistance(p1p2angle, calculateAngle(s.p1, s.p2)) > 45);
-                    //System.Diagnostics.Debug.WriteLine("isStraight = " + isStraight);
-
-                    //
                     double straightLineLength = distance(straightLine.p1, straightLine.p2);
                     double segmentsLength = 0;
                     foreach (Segment segment in segments)
@@ -217,17 +203,11 @@ namespace Sketchpad
         private List<Segment> drawArrowHead(Segment segmentLine)
         {
             double angle = calculateAngle(segmentLine.p2, segmentLine.p1);
-            //SketchpadApp.Instance.Diagnostics.Write("drawArrowHead");
-            //SketchpadApp.Instance.Diagnostics.Write("angle = " + angle);
 
             Point arrowHead = new Point(segmentLine.p2.X, segmentLine.p2.Y);
             int dashLength = 15;
 
             double dashAngle = Math.PI / 180 * 40;
-
-            System.Diagnostics.Debug.WriteLine("angle = " + angle);
-            //while (angle < 0)
-                //angle += 360;
 
             double a1 = angle - dashAngle / 2;
             Segment s1 = new Segment();

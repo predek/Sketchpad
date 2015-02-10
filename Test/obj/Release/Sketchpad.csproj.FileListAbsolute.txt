@@ -1,0 +1,14 @@
+C:\Users\username\Desktop\Sketchpad\Test\bin\Release\Test.exe.config
+C:\Users\username\Desktop\Sketchpad\Test\bin\Release\Test.exe
+C:\Users\username\Desktop\Sketchpad\Test\bin\Release\Test.pdb
+C:\Users\username\Desktop\Sketchpad\Test\bin\Release\NCalc.dll
+C:\Users\username\Desktop\Sketchpad\Test\obj\Release\Sketchpad.csprojResolveAssemblyReference.cache
+C:\Users\username\Desktop\Sketchpad\Test\obj\Release\MainWindow.baml
+C:\Users\username\Desktop\Sketchpad\Test\obj\Release\MainWindow.g.cs
+C:\Users\username\Desktop\Sketchpad\Test\obj\Release\App.g.cs
+C:\Users\username\Desktop\Sketchpad\Test\obj\Release\Test_MarkupCompile.cache
+C:\Users\username\Desktop\Sketchpad\Test\obj\Release\Test.g.resources
+C:\Users\username\Desktop\Sketchpad\Test\obj\Release\Sketchpad.Properties.Resources.resources
+C:\Users\username\Desktop\Sketchpad\Test\obj\Release\Sketchpad.csproj.GenerateResource.Cache
+C:\Users\username\Desktop\Sketchpad\Test\obj\Release\Test.exe
+C:\Users\username\Desktop\Sketchpad\Test\obj\Release\Test.pdb

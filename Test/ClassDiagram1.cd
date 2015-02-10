@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Sketchpad.Document">
+    <Position X="0.5" Y="13.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAABAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Document.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketchpad.Edge">
+    <Position X="2.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAACAAAAAAAAAAAAAAIAAAABAIACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Edge.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketchpad.EditPanel">
+    <Position X="4.5" Y="10.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACAEgAAAAAAQAAAAAAAAAAAAAAAAAABIAABAAAAAAAA=</HashCode>
+      <FileName>EditPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketchpad.Eraser" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACIAAQAAAAAAAEAAQgAAAAAAQEAAEAAAAAAAAACAAAA=</HashCode>
+      <FileName>Eraser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Sketchpad.EvaluationManager">
+    <Position X="6.5" Y="10.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>EvaluationManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketchpad.FileManager">
+    <Position X="2.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>FileManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketchpad.Node">
+    <Position X="4.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAABAAACAAAAACAAAAAAA=</HashCode>
+      <FileName>Node.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketchpad.Pencil" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACIAAAAAAAAQAEAAQgAAAAAAAEAAEAAEAAAAAACAAAA=</HashCode>
+      <FileName>Pencil.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Sketchpad.Segment">
+    <Position X="4.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Segment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketchpad.SegmentsBuffer">
+    <Position X="2.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAQAABAAACAAAAIAAIEEAAAgAAEAAIAAAAQgA=</HashCode>
+      <FileName>SegmentsBuffer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketchpad.Selection">
+    <Position X="2.5" Y="10.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAIAAAADAAACAAAAQAAAAAAAA=</HashCode>
+      <FileName>Selection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketchpad.SelectTool" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="10.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACIAAAAAAAAAAEAAAgAAAAAAAAAEEAAAAAAAAACAAAA=</HashCode>
+      <FileName>SelectTool.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.283" Collapsed="true" />
+  </Class>
+  <Class Name="Sketchpad.SketchManager">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAEAQgAAKABkAAAACAAAgAgQEARQMAKAACAIAEEoIA=</HashCode>
+      <FileName>SketchManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sketchpad.ToolsManager">
+    <Position X="0.5" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAIAAASAAAEAAAgAIAgAAAAAEEAAAAAAAAACAAAA=</HashCode>
+      <FileName>ToolsManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Sketchpad.Tool" Collapsed="true">
+    <Position X="2.5" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAEAAAgAAAAAAAAAAEAAAAAAAAACAAAA=</HashCode>
+      <FileName>Tool.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Tahoma" Size="9" />
+</ClassDiagram>
